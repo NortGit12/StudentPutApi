@@ -14,16 +14,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <textField key="tableHeaderView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="vAZ-Ah-LSg">
-                            <rect key="frame" x="0.0" y="64" width="375" height="30"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="qaB-mW-Dkc">
+                            <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MrA-zX-tY9">
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="MrA-zX-tY9" secondAttribute="trailing" constant="8" id="CKX-Aw-ZLP"/>
+                                <constraint firstItem="MrA-zX-tY9" firstAttribute="leading" secondItem="qaB-mW-Dkc" secondAttribute="leading" constant="8" id="HpL-es-XZA"/>
+                                <constraint firstAttribute="bottom" secondItem="MrA-zX-tY9" secondAttribute="bottom" constant="8" id="K2o-CO-Spa"/>
+                                <constraint firstItem="MrA-zX-tY9" firstAttribute="top" secondItem="qaB-mW-Dkc" secondAttribute="top" constant="8" id="SrG-P6-4xT"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentCell" id="WPz-t7-jDd">
-                                <rect key="frame" x="0.0" y="122" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="136" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WPz-t7-jDd" id="COP-8K-gfS">
                                     <frame key="frameInset" width="375" height="43"/>
@@ -44,7 +55,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="nameTextField" destination="vAZ-Ah-LSg" id="NXd-NO-w9f"/>
+                        <outlet property="nameTextField" destination="MrA-zX-tY9" id="OAi-JV-Hqn"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VBS-dT-dpi" userLabel="First Responder" sceneMemberID="firstResponder"/>
