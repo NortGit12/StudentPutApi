@@ -14,6 +14,7 @@
 		1F277E8A1DB7D8A000140935 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F277E891DB7D8A000140935 /* Student.swift */; };
 		1F277E8C1DB7DC7400140935 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F277E8B1DB7DC7400140935 /* NetworkController.swift */; };
 		1F277E8E1DB7DCC900140935 /* StudentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F277E8D1DB7DCC900140935 /* StudentController.swift */; };
+		1F277E901DB7F17300140935 /* StudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F277E8F1DB7F17300140935 /* StudentTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1F277E891DB7D8A000140935 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		1F277E8B1DB7DC7400140935 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		1F277E8D1DB7DCC900140935 /* StudentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentController.swift; sourceTree = "<group>"; };
+		1F277E8F1DB7F17300140935 /* StudentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				1F277E891DB7D8A000140935 /* Student.swift */,
 				1F277E8B1DB7DC7400140935 /* NetworkController.swift */,
 				1F277E8D1DB7DCC900140935 /* StudentController.swift */,
+				1F277E8F1DB7F17300140935 /* StudentTableViewController.swift */,
 				1F277E7E1DB7D40800140935 /* Assets.xcassets */,
 				1F277E801DB7D40800140935 /* LaunchScreen.storyboard */,
 				1F277E831DB7D40800140935 /* Info.plist */,
@@ -146,6 +149,7 @@
 				1F277E781DB7D40800140935 /* AppDelegate.swift in Sources */,
 				1F277E8E1DB7DCC900140935 /* StudentController.swift in Sources */,
 				1F277E8A1DB7D8A000140935 /* Student.swift in Sources */,
+				1F277E901DB7F17300140935 /* StudentTableViewController.swift in Sources */,
 				1F277E8C1DB7DC7400140935 /* NetworkController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

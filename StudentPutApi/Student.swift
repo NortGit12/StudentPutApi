@@ -23,7 +23,7 @@ extension Student {
     // MARK: - Properties
     //==================================================
     
-    static let nameKey = "name"
+    static let nameKey = "nombre"
     
     var dictionaryRepresentation: [String : Any] {
         

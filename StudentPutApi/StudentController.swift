@@ -21,9 +21,9 @@ class StudentController {
     // MARK: - Properties
     //==================================================
     
-    static var baseURL = URL(string: "https://names-e4301.firebaseio.com/students")
+    static var baseURL = URL(string: "https://names-e4301.firebaseio.com/students")!
     
-    static let getterEndpoint = baseURL?.appendPathExtension("json")
+    static let getterEndpoint = baseURL.appendingPathExtension("json")
     
     //==================================================
     // MARK: - Methods
@@ -36,10 +36,10 @@ class StudentController {
         let student = Student(name: name)
         
         // Add the student name to the URL
-        guard let url = baseURL?.appendingPathComponent(name).appendingPathExtension("json") else { return }
+        let url = baseURL.appendingPathComponent(name).appendingPathExtension("json")
         
         // Call the NetworkController to send the data to Firebase
-        NetworkController.performRequest(for: url, httpMethod: .Put, body: student.jsonData) { (networkCalldata, networkCallError) in
+        NetworkController.performRequest(for: url, httpMethod: .Put, body: student.jsonData) { (data, error) in
             
             var success = false
             
@@ -55,25 +55,36 @@ class StudentController {
             if let error = error {
                 
                 NSLog("Error: \(error.localizedDescription)")
-//                if let completion = completion {
-//                    completion(false)
-//                }
-//                return
+                
             } else if responseDataString.contains("error") {
                 
                 NSLog("Error: \(responseDataString)")
-//                if let completion = completion {
-//                    completion(false)
-//                }
-//                return
+                
             } else {
                 
                 print("Successfully saved data to the endpoint.  \nResponse: \(responseDataString)")
                 success = true
-//                if let completion = completion {
-//                    completion(success)
-//                }
             }
+        }
+    }
+    
+    static func fetchStudents(completion: @escaping ([Student]) -> Void) {
+        
+        NetworkController.performRequest(for: getterEndpoint, httpMethod: .Get) { (data, error) in
+            
+            guard let data = data else {
+                completion([])
+                return
+            }
+            
+            guard let studentsDict = (try? JSONSerialization.jsonObject(with: data, options: [.allowFragments])) as? [String : [String : String]] else {
+                
+                completion([])
+                return
+            }
+            
+            let students = studentsDict.flatMap{ Student(dictionary: $0.1) }
+            completion(students)
         }
     }
 }

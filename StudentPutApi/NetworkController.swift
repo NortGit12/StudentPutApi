@@ -26,7 +26,7 @@ class NetworkController {
                                httpMethod: HTTPMethod,
                                urlParameters: [String:String]? = nil,
                                body: Data? = nil,
-                               completion: ((networkCallData: Data?, networkCallError: Error?) -> Void)? = nil) {
+                               completion: ((Data?, Error?) -> Void)? = nil) {
         
         let requestURL = self.url(byAdding: urlParameters, to: url)
         var request = URLRequest(url: requestURL)
